@@ -1,13 +1,14 @@
 const express = require("express");
 const mongoose = require("mongoose");
-const bodyParser = require('body-parser');
+
 
 
 const app = express();
 
 //Bodyparser middlewear
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(bodyParser.urlencoded({ extended: true }));
+
 
 //DB Config
 const db = require("./config/keys").mongoURI;
