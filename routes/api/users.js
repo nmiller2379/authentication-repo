@@ -12,6 +12,7 @@ router.post("/", (req, res) => {
     console.log("name", name);
     console.log("email", email);
     console.log("password", password);
+    console.log(req.body)
 
     // validation
     if(!name || !email || !password) {
