@@ -6,8 +6,10 @@ const mongoose = require("mongoose");
 const app = express();
 
 //Bodyparser middlewear
-app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
+const port = process.env.PORT || 5000;
+
 
 
 //DB Config
@@ -22,6 +24,6 @@ mongoose
 app.use("/api/tasks", require("./routes/api/tasks"));
 app.use("/api/users", require("./routes/api/users"))
 
-const port = process.env.PORT || 5002;
+
 
 app.listen(port, () => console.log(`Server started on port ${port}`));
