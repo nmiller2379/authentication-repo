@@ -9,11 +9,14 @@ const User = require("../../models/UserSchema");
 // Register new user
 router.post("/", (req, res) => {
 	const { name, email, password } = req.body;
+    console.log("name", name);
+    console.log("email", email);
+    console.log("password", password);
 
     // validation
-    // if(!name || !email || !password) {
-    //     return res.status(400).json({ msg: "Please enter all fields" });
-    // }
+    if(!name || !email || !password) {
+        return res.status(400).json({ msg: "Please enter all fields" });
+    }
 
     // Check for existing user
     User.findOne({ email })

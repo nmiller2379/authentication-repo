@@ -19,6 +19,6 @@ mongoose
 app.use("/api/tasks", require("./routes/api/tasks"));
 app.use("/api/users", require("./routes/api/users"))
 
-const port = process.env.PORT || 5001;
+const port = process.env.PORT || 5002;
 
 app.listen(port, () => console.log(`Server started on port ${port}`));
